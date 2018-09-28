@@ -22,5 +22,9 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "ISC"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calm/eslint-plugin-react-intl-format"
+  }
 }
