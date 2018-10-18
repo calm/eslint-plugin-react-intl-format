@@ -35,6 +35,12 @@ ruleTester.run("missing-attribute", rule, {
       },
       {
         code: '<FormattedMessage id="blah" defaultMessage="{number} {number, plural, one {Day} other {Days}}" values={{ number: 5 }}/>'
+      },
+      {
+        code: `
+          const message = { id: 'test', defaultMessage: 'test' };
+          <FormattedMessage { ...message } />
+        `
       }
     ],
 

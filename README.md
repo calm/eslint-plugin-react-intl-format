@@ -16,7 +16,7 @@ use case, you may want to disable this.
 
 #### FormattedMessage validation
 * Checks to make sure plain text doesn't exist within html tags (should be translated)
-* <a> tags by default are not checked (this can be disabled)
+* `<a>` tags by default are not checked (this can be disabled)
 * Numbers are ignored (they're the same in every language)
 * Trailing whitespace is not allowed (this can be disabled)
 
@@ -28,6 +28,8 @@ use case, you may want to disable this.
 #### Missing Attribute validation
 * <FormattedMessage/> components must have both `defaultMessage` and `id` attributes set
 * `defaultMessage` and `id` attributes cannot be empty
+* Spread operator by default is not allowed
+  * Spread operator can't be evaluated by eslint's AST, so translations can't be guaranteed
 
 ## Installation
 
@@ -65,7 +67,7 @@ Currently there's just one rule: 'missing-formatted-message'.
 {
     "rules": {
         "react-intl-format/missing-formatted-message": [2, { "noTrailingWhitespace": true, "ignoreLinks": true }],
-        "react-intl-format/missing-attribute": [2, { "noTrailingWhitespace": true }],
+        "react-intl-format/missing-attribute": [2, { "noTrailingWhitespace": true, "noSpreadOperator": true }],
         "react-intl-format/missing-values": 2
     }
 }
