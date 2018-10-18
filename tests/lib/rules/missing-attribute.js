@@ -39,6 +39,13 @@ ruleTester.run("missing-attribute", rule, {
       {
         code: '<FormattedMessage id="blah" defaultMessage="has whitespace " />',
         options: [{ noTrailingWhitespace: false }]
+      },
+      {
+        code: `
+          const message = { id: 'user.name', defaultMessage: 'Username'};
+          <FormattedMessage { ...message } />
+        `,
+        options: [{ noSpreadOperator: false }]
       }
     ],
 
@@ -95,6 +102,16 @@ ruleTester.run("missing-attribute", rule, {
         errors: [{
           message: 'no trailing whitespace',
           type: 'Literal',
+        }]
+      },
+      {
+        code: `
+          const message = { id: 'user.name', defaultMessage: 'Username'};
+          <FormattedMessage { ...message } />
+        `,
+        errors: [{
+          message: "don't use spread operator",
+          type: 'JSXOpeningElement',
         }]
       }
     ]
