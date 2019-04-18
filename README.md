@@ -1,3 +1,8 @@
+# NOTICE
+This plugin has been deprecated. Please use `@calm/eslint-plugin-react-intl` instead.
+npm: https://www.npmjs.com/package/@calm/eslint-plugin-react-intl
+github: https://github.com/calm/eslint-plugin-react-intl
+
 # eslint-plugin-react-intl-format
 
 This is a plugin to ensure that Intl translations are being made correctly with [react-intl](https://www.npmjs.com/package/react-intl).
